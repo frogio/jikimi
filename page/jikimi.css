@@ -1,0 +1,29 @@
+body {
+    background: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    color: #0d1b2a;
+}
+
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;    
+}
+
+#mainNavbar .nav-link {
+    color: #000000;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #e5e5e5;
+}
+
+#mainNavbar .navbar-brand {
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+.navbar.scrolled {
+    background: rgb(128,128,128);
+    transition: background 500ms;
+}
+
