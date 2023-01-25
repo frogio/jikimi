@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+  background: #fff;
+}
+
+.wrapper{
+  width: 330px;
+  padding: 1rem 1rem;
+  margin: 50px auto;
+  background-color: #dee1e0;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.login_wrapper{
+  width: 330px;
+  padding: 4rem 1rem;
+  margin: 50px auto;
+  background-color: #dee1e0;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1) ;
+}
+
+.home {
+  background: none;
+  color: #405455;
+  float: left;
+  position: relative;
+  left: 180px;
+  bottom: 25px;
+}
+
+.login_home{
+  background: none;
+  color: #405455;
+  float: left;
+  position: relative;
+  left: 180px ;
+  bottom: 70px;
+}
+
+h1{
+  position: relative;
+  bottom: 35px;
+  font-size: 2rem;
+  color: #405455;
+  margin-bottom: 1.2rem;
+}
+
+.title{
+  position: relative;
+  top: 25px;
+  right: 100px;
+}
+
+.login_title{
+  position: relative;
+  bottom: 5px;
+  right: 95px; 
+}
+
+form input{
+  position: relative;
+  bottom: 35px;
+  width: 83%;
+  outline: none; 
+  border: 1px solid #fff;
+  padding: 11px 25px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background: #faf9f8;
+}
+
+input::-webkit-input-placeholder{
+  color: #405455;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+}
+
+.input_form{
+  position: relative;
+  top: 60px;
+}
+
+.login_input_form{
+  position: relative;
+  top: 30px;
+}
+
+button{
+  position: relative;
+  bottom: 30px;
+  font-size: 1.4rem;
+  margin-top: 1.2rem;
+  padding: 6px 0;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  width: 67%;
+  color: #faf9f8;
+  cursor: pointer;
+  background: #405455;
+}
+
+/* button:hover{
+  background: rgba(17,107,143,0.877);
+} */
+
+input:focus{
+  border: 1px solid rgb(192,192,192);
+}
+
+.login_button{
+  position: relative;
+  bottom: 5px;
+}
+
+.login_button:hover{
+  background: rgba(17,107,143,0.877);
+}
+
+.signup_button:hover{
+  background: rgba(17,107,143,0.877);
+}
+
+.member{
+  position: relative;
+  bottom: 35px;
+  right: 8.5px;
+  font-size: 0.95rem;
+  margin-top: 1.4rem;
+  color: #9eafae;
+}
+
+.login_member{
+  position: relative;
+  top: 10px;
+  color: #9eafae;
+}
+
+.member a{
+  color: #405455;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  left: 8.5px;
+}
+
+#signup_link{
+  color: #405455;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  left: 5px;
+}

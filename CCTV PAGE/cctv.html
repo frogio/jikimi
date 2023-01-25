@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cctv_page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="/CCTV PAGE/style.css">
+</head>
+<body>
+
+  <!--===navbar start ===-->
+  <nav id="mainNavbar" class="navbar navbar-dark navbar-expand py-0 fixed-top">
+    <a href="#" class="navbar-brand">
+        <img src="/CCTV PAGE/img/cctv.png">
+        슬기로운 지키미</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navLinks">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="" class="nav-link">폭력 cctv 내역</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">폭력 발생 위험도</a>
+            </li>
+        </ul>
+    </div>
+    <button type="button" class="btn btn-outline-secondary float-right mt-2 mr-2 rounded-pill">Login</button>
+</nav>
+<div class="cctv_bg">
+  <div class="scroll-wrapper">
+    <div class="scroll-bg">
+      <div class="scroll-div">
+        <div class="scroll-object">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam porro molestiae perferendis voluptatum alias modi cupiditate quod! Obcaecati inventore explicabo commodi veniam numquam distinctio voluptatem excepturi, quo, voluptates soluta alias!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iste laboriosam, ab incidunt et at tempore consequatur, ullam quas explicabo libero molestiae, ex fugiat cumque dolorum aspernatur. Veniam, aliquid ea!
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium officiis id sunt, dolores commodi, exercitationem sed explicabo error, aliquam ullam expedita earum ipsa porro eaque dignissimos vitae asperiores nemo? Est.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quisquam accusamus totam, nostrum atque excepturi velit, quos quasi aut maiores quae magni laborum similique odio numquam in eos laudantium saepe.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--=== js script start ===-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+        <script>
+          $(function () {
+              $(document).scroll(function () {
+                  var $nav = $("#mainNavbar");
+                  $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+              });
+          });
+      </script>
+
+</body>
+</html>

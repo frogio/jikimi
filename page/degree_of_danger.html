@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jikimi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="jikimi.css">
+</head>
+<body>
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand py-0 fixed-top">
+        <a href="index.html" class="navbar-brand">
+            <img src="../img/security-camera.png">
+            슬기로운 지키미</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="" class="nav-link">폭력 cctv 내역</a>
+                </li>
+                <li class="nav-item">
+                    <a href="degree_of_danger.html" class="nav-link">폭력 발생 위험도</a>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-outline-dark float-right mt-2 mr-2 rounded-pill">Login</button>
+    </nav>
+
+
+    <footer class="mt-auto py-3 bg-light">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div id="footerGroup" class="text-black text-center d-none d-lg-block mt-5">
+                    <img src="../img/security-camera.png"><b>
+            슬기로운 지키미</b></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="footerGroup" class="text-black text-center d-none d-lg-block mt-5">
+                    <div>FAQ 슬기로운 지키미 서비스 이용 관련 문의 123-4567</div>
+                    <div>서울시 강남구 삼성로 534 SAC 아트홀 6층, 캠퍼스세븐 4강의장</div>
+                    <div>서비스 소개  |  개인정보 처리방침  |  이용약관</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#mainNavbar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+</body>
+</html>
