@@ -1,3 +1,4 @@
+
 body {
   background: #ffffff;
   font-family: 'Ubuntu', sans-serif;
@@ -27,29 +28,36 @@ body {
   transition: background 500ms;
 }
 
+
+.cctv_wrapper{
+	margin-top:7rem;
+	padding:2rem;
+}
+
+
 .cctv_bg{
   background: #dee1e0;
-  width: 182.5vh;
-  height: 75vh;
+  width: 100%;
+  border-radius: 50px;
+  margin:auto;
+  padding:3%;
+  display:flex;
+  justify-content:center;
 }
 
 .scroll-wrapper{
   position: relative;
-  right: 630px;
-  top: 60px;
 }
 
 .scroll-bg{
   background: #405455;
-  width: 200px;
-  margin: 10% auto;
+  height:100%;
   padding: 30px;
   border-radius: 50px;
 }
 
 .scroll-div{
-  width: 150px;
-  height: 400px;
+  height: 70vh;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -73,4 +81,18 @@ body {
   font-size: 15px;
   padding: 2px;
 }
+
+
+.video-bg{
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 50px;
+}
+
+video {
+  /* override other styles to make responsive */
+  width: 100%    !important;
+  height: auto   !important;
+}
+
 

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,14 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="/CCTV PAGE/style.css">
+  <link rel="stylesheet" href="{% static 'cctv_page/style.css' %}">
 </head>
 <body>
 
   <!--===navbar start ===-->
   <nav id="mainNavbar" class="navbar navbar-dark navbar-expand py-0 fixed-top">
     <a href="#" class="navbar-brand">
-        <img src="/CCTV PAGE/img/cctv.png">
+        <img src="{% static 'img/cctv.png' %}">
         슬기로운 지키미</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,39 +36,37 @@
     </div>
     <button type="button" class="btn btn-outline-secondary float-right mt-2 mr-2 rounded-pill">Login</button>
 </nav>
-<div class="cctv_bg">
-  <div class="scroll-wrapper">
-    <div class="scroll-bg">
-      <div class="scroll-div">
-        <div class="scroll-object">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam porro molestiae perferendis voluptatum alias modi cupiditate quod! Obcaecati inventore explicabo commodi veniam numquam distinctio voluptatem excepturi, quo, voluptates soluta alias!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta iste laboriosam, ab incidunt et at tempore consequatur, ullam quas explicabo libero molestiae, ex fugiat cumque dolorum aspernatur. Veniam, aliquid ea!
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium officiis id sunt, dolores commodi, exercitationem sed explicabo error, aliquam ullam expedita earum ipsa porro eaque dignissimos vitae asperiores nemo? Est.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quisquam accusamus totam, nostrum atque excepturi velit, quos quasi aut maiores quae magni laborum similique odio numquam in eos laudantium saepe.
-        </div>
-      </div>
-    </div>
-  </div>
+   <!--===navbar end ===-->
+
+
+<div class="cctv_wrapper">
+	<div class="cctv_bg row">
+	
+	  <div class="scroll-wrapper col-3">
+		<div class="scroll-bg">
+
+		  <div class="scroll-div">
+			<div class="scroll-object">
+				여기에 비디오 리스트
+			</div>
+		  </div>		  
+		  
+		  
+		</div>
+	  </div>
+	  
+	  <div class="video-bg col-9">
+			
+		<video autoplay controls loop muted poster="aaa" preload="bbb">
+			<source src="https://project2-school-violence-detection.s3.us-east-2.amazonaws.com/%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90/2023_1_25/10_41.mp4
+" type="video/mp4">
+				zzz
+		</video>
+		
+	  </div>
+	  
+	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!--=== js script start ===-->
