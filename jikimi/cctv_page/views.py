@@ -3,6 +3,7 @@ from .models import Video
 
 
 # Create your views here.
+
 def cctv_page(request):	
     videoList = Video.objects.all()    
     

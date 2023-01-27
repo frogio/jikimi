@@ -48,11 +48,11 @@
 		  <div class="scroll-div">
 			  <div class="scroll-object">
 
-				  {% for video in videoList%}
+		  {% for video in videoList%}
             <div class="video-item" id="{{ video.video_path }}">
               {{ video.video_date }}
               <br/>
-              {{ video.video_start_time }} ~ {{ video.video_end_time }}
+              {{ video.video_start_time }}
             </div>
           {% endfor %}
 
