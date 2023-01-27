@@ -46,9 +46,17 @@
 		<div class="scroll-bg">
 
 		  <div class="scroll-div">
-			<div class="scroll-object">
-				여기에 비디오 리스트
-			</div>
+			  <div class="scroll-object">
+
+				  {% for video in videoList%}
+            <div class="video-item" id="{{ video.video_path }}">
+              {{ video.video_date }}
+              <br/>
+              {{ video.video_start_time }} ~ {{ video.video_end_time }}
+            </div>
+          {% endfor %}
+
+			  </div>
 		  </div>		  
 		  
 		  
@@ -57,7 +65,7 @@
 	  
 	  <div class="video-bg col-9">
 			
-		<video autoplay controls loop muted poster="aaa" preload="bbb">
+		<video autoplay controls>
 			<source src="https://project2-school-violence-detection.s3.us-east-2.amazonaws.com/%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90/2023_1_25/10_41.mp4
 " type="video/mp4">
 				zzz
@@ -84,6 +92,13 @@
                   $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
               });
           });
+
+          $(document).on('click', '.video-item', function(e){
+            // alert();
+            $("video").attr("src", $(this).attr("id"));	
+						$("video")[0].load();				// 위 함수를 호출해야 영상 소스를 바꿔서 재생 가능
+						document.getElementById("video").play();
+          })
       </script>
 
 </body>
