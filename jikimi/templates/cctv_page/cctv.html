@@ -17,57 +17,77 @@
 </head>
 <body>
 
-  <div class="wrapper">
-    <!--top menu & menu button-->
-    <div class="sidebar">
-      <div class="title">
-        <h1 class="logo">JIKIMI</h1>
-        <h3> cctv_page</h3>
-        <p>레이아웃 표시용</p>
-      </div>
-      <!--menu item-->
-        
-        <div class="scroll-bg">
-          <div class="scroll-div">
-            <div class="scroll-object">
-
-				{% for video in videoList%}
-					<div class="video-item" id="{{ video.video_path }}">
-					{{ video.video_date }}
-					<br/>
-					{{ video.video_start_time }}
+  {% if request.user.is_authenticated %}
+  
+	<div class="wrapper">
+		<!--top menu & menu button-->
+		<div class="sidebar">
+		<div class="title">
+			<h1 class="logo">JIKIMI</h1>
+			<h3> cctv_page</h3>
+			<p>레이아웃 표시용</p>
+		</div>
+		<!--menu item-->
+				<div class="scroll-bg">
+			<div class="scroll-div">
+				<div class="scroll-object">
+	
+					{% for video in videoList%}
+						<div class="video-item" id="{{ video.video_path }}">
+						{{ video.video_date }}
+						<br/>
+						{{ video.video_start_time }}
+						</div>
+					{% endfor %}
+			
+						</div>
 					</div>
-				{% endfor %}
-		
+	
+	
+				</div>
+			</div>			
+		<div class="section">
+				<div class="top_navbar">
+					<div class="hamburger">
+					<a href="#">
+						<ion-icon name="menu-outline"></ion-icon>
+					</a>
 					</div>
 				</div>
-
-
-            </div>
-          </div>			
-    <div class="section">
-      <div class="top_navbar">
-        <div class="hamburger">
-          <a href="#">
-            <ion-icon name="menu-outline"></ion-icon>
-          </a>
-        </div>
-      </div>
-
-
-	  <div class="video-bg">
+	
+	
+				<div class="video-bg">
+						
+							<video autoplay controls>
+								<source src="https://project2-school-violence-detection.s3.us-east-2.amazonaws.com/%EB%AA%85%EC%A7%80%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90/2023_01_27/09_00.mp4" type="video/mp4">
+									zzz
+							</video>
+				</div>
 			
-				<video autoplay controls>
-					<source src="https://project2-school-violence-detection.s3.us-east-2.amazonaws.com/%EB%AA%85%EC%A7%80%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90/2023_01_27/09_00.mp4" type="video/mp4">
-						zzz
-				</video>
-	  </div>
-	  
-
-	</div>
 		
-    </div>
-  <script src="{% static 'cctv_page/script.js' %}"></script>
+			</div>
+			
+		</div>
+	
+
+		
+	<script src="{% static 'cctv_page/script.js' %}"></script>
+
+	{% else %}
+	<script>
+	
+	if(confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")){
+		// alert("로그인 창으로 리다이렉트");
+		
+	}
+	else{
+		window.location.href = "{% url 'index'%}";
+	}
+	
+	</script>
+	
+	{% endif %} 
+
 
 
 </body>
