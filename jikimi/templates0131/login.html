@@ -1,44 +1,81 @@
-{% extends "coplate_base/base.html" %}
-
-{% load static %}
-{% load widget_tweaks %}
-
-{% block title %}로그인 | Coplate{% endblock title %}
-
-{% block content %}
-<div class="account-background">
-  <main class="account">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Completion</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<!-- === Login Form START ===   -->
+ <section class="form-body"> 
+  <div class="container">
+  <div class="login-wrap active">
     <div class="title">
-      <a href="{% url 'index' %}">
-        <img class="logo" src="{% static 'coplate/assets/coplate-logo.svg' %}" alt="Coplate Logo">
-      </a>
+        <h1>Login</h1>
     </div>
 
-    <form method="post">
-      {% csrf_token %}
-        {% for error in form.non_field_errors %}
-            <div class="form-error error-message">{{ error }}</div>
-        {% endfor %}
+    <form action="#">
+        <div class="input-area">
+            <input type="email" id="email" autocomplete="off" required>
+            <label for="email">Email</label>
+        </div>
 
-      <div>
-          {{ form.login|add_class:"cp-input"|attr:"placeholder:이메일"|add_error_class:"error" }}
-          {% for error in form.login.errors %}
-            <div class="form-error error-message">{{ error }}</div>
-          {% endfor %}
-      </div>
-      <div>
-        {{ form.password|add_class:"cp-input"|attr:"placeholder:비밀번호"|add_error_class:"error" }}
-          {% for error in form.password.errors %}
-            <div class="form-error error-message">{{ error }}</div>
-          {% endfor %}
-      </div>
-      <button class="cp-button" type="submit">로그인</button>
+        <div class="input-area">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+        </div>
+
+        <div class="forgot-pass">
+            <a href="#">Forgot password?</a>
+        </div>
+
+        <div class="button-area">
+            <button type="submit" class="login-btn">Login</button>
+        </div>
     </form>
-    
-    <div class="info">
-      <a class="item" href="{% url 'account_reset_password' %}">비밀번호 찾기</a>
-      <a class="item" href="{% url 'account_signup' %}">회원가입</a>
+
+    <div class="form-toggle-area">
+        <p>Not a member? <span id="toggle-signup">Signup now</span></p>
     </div>
-  </main>
-</div>
-{% endblock content %}
+  </div>
+
+        <!-- signup form -->
+        <div class="signup-wrap">
+          <div class="title">
+              <h1>Signup</h1>
+          </div>
+
+          <form action="#">
+              <div class="input-area">
+                  <input type="text" id="name" autocomplete="off" required>
+                  <label for="name">Name</label>
+              </div>
+
+              <div class="input-area">
+                  <input type="email" id="email" autocomplete="off" required>
+                  <label for="email">Email</label>
+              </div>
+
+              <div class="input-area">
+                  <input type="password" id="password" required>
+                  <label for="password">Password</label>
+              </div>
+
+              <div class="button-area">
+                  <button type="submit" class="signup-btn">Signup</button>
+              </div>
+          </form>
+
+          <div class="form-toggle-area">
+              <p>Have an account? <span id="toggle-login">Login now</span></p>
+          </div>
+        </div>
+     </div>
+</section>
+  <!--=== Main JS Link START ===-->
+<script src="/script.js"></script>
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>
