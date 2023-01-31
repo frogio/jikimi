@@ -20,29 +20,49 @@ body {
   left: 0;
   width: 225px;
   height: 100%;
-  padding: 20px 0px;
+  padding: 20px 10px;
   transition: all 0.5s ease;
 }
 
-.sidebar-btn {
-  width: 180px;
-  height: 50px;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.25em;
-  color: #162938;
-  font-weight: 500;
-  margin-bottom: 5px;
-  margin-left: 20px;
-  transition: .5s;
+.scroll-bg {
+  background:#f5f6fa;
+  width: 200px;
+  height: 600px;
+  margin: 10% auto;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.sidebar-btn:hover {
-  background: #fff;
-  /* color: #162938; */
+.scroll-div {
+  width: 187px;
+  background: transparent;
+  height: 570px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.scroll-div::-webkit-scrollbar {
+  width: 14.5px;
+}
+
+.scroll-div::-webkit-scrollbar-track{
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb{
+  background-color: rgb(205 92 92 / 50%);
+  border-radius: 20px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb:hover{
+  background-color: indianred;
+}
+
+.scroll-object {
+  color: #51525a;
+  font-size: 15px;
+  padding: 20px;
 }
 
 .wrapper .sidebar .title {
@@ -54,30 +74,30 @@ body {
   width: 100px;
   height: 100px;
   margin: 0 auto;
-  color: #162938;
+  color: #51525a;
 }
 
 .title h3 {
-  color: #162938;
+  color: #51525a;
   margin: 10px 0 5px;
 }
 
 .wrapper .sidebar .title p {
-  color: #162938;
+  color: #51525a;
   font-size: 14px;
 }
 
 .wrapper .sidebar ul li a {
   display: block;
   padding: 13px 30px;
-  border-bottom: 1px solid #CFBF00;
-  color: #162938;
+  border-bottom: 1px solid indianred;
+  color: #51525a;
   font-size: 16px;
   position: relative;
 }
 
 .wrapper .sidebar ul li a .icon {
-  color: #162938;
+  color: #51525a;
   width: 30px;
   display: inline-block;
 }
@@ -86,7 +106,7 @@ body {
 .wrapper .sidebar ul li a.active {
   color: #0c7db1;
   background: #fff;
-  border-right: 2px solid rgb(207, 191, 0);
+  border-right: 2px solid indianred;
 }
 
 .wrapper .sidebar ul li a:hover .icon,
@@ -113,13 +133,22 @@ body {
   padding: 0 30px;
 }
 
+.hamburger {
+  position: absolute;
+  font-size: 23px;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+  color: #51525a;
+}
+
 .wrapper .section .top_navbar .hamburger a {
   font-size: 28px;
-  color: #162938;
+  color: #51525a;
 }
 
 .wrapper .section .top_navbar .hamburger a:hover {
-  color: #CFBF00;
+  color: indianred;
 }
 
 body.active .wrapper .sidebar {
