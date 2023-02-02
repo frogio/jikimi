@@ -76,19 +76,14 @@
 	{% else %}
 	<script>
 	
-	if(confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?")){
-		// alert("로그인 창으로 리다이렉트");
-		
-	}
-	else{
+	if(confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?"))
+		window.location.href = "{% url 'account:login' %}";
+	else
 		window.location.href = "{% url 'index'%}";
-	}
 	
 	</script>
 	
 	{% endif %} 
-
-
 
 </body>
 </html>

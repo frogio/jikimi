@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'account.User'
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 # Application definition
 
@@ -38,6 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "cctv_page",
+    "account",
+    "violence_data_page",
 ]
 
 MIDDLEWARE = [
@@ -77,8 +83,8 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "team2_db",
-        "USER" : "admin",
+        "NAME": "team_test_db2",
+        "USER" : "admin",   
         "PASSWORD" : "password1234",
         "HOST" : "team2-rds.cpa0spimmjj8.us-east-2.rds.amazonaws.com",
         "PORT" : "3306"
@@ -124,7 +130,8 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [ 
                     BASE_DIR / 'static',
-                    BASE_DIR / 'static/cctv_page'
+                    BASE_DIR / 'static/cctv_page',
+                    BASE_DIR / 'static/main_page'
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
