@@ -2,17 +2,8 @@ from django.db import models
 
 class Region(models.Model):
     region_id = models.AutoField(primary_key=True)
-    region_si = models.CharField(max_length=20)
-    region_gu = models.CharField(max_length=20)
-    region_singleParent = models.DecimalField(max_digits=10, decimal_places=8)
-    region_basicRecipient = models.DecimalField(max_digits=10, decimal_places=8)
-    region_incomeMedium = models.DecimalField(max_digits=3, decimal_places=1)
-    region_incomeHigh = models.DecimalField(max_digits=3, decimal_places=1)
-    region_adultGame = models.IntegerField(11)
-    region_homeViolence = models.DecimalField(max_digits=10, decimal_places=9)
-    region_dateViolence = models.DecimalField(max_digits=11, decimal_places=10)
-    region_averageIncome = models.DecimalField(max_digits=10, decimal_places=8)
-    region_multicultural = models.DecimalField(max_digits=11, decimal_places=9)
+    region_name = models.CharField(max_length = 150)
+    region_environment_score = models.FloatField()
 
     class Meta:
         managed = True
@@ -33,10 +24,10 @@ class School(models.Model):
 class SchoolData(models.Model):
     school_data_id = models.AutoField(primary_key=True)
     school_data_school = models.ForeignKey(School, models.DO_NOTHING, db_column='school_data_school')
-    school_data_education = models.DecimalField(max_digits=5, decimal_places=2)
-    school_data_score = models.DecimalField(max_digits=10, decimal_places=8)
-    school_data_cluster = models.IntegerField(11)
-    school_danger_level = models.CharField(max_length=10)
+    school_data_harzard_score = models.IntegerField()
+    school_data_alleviate_score = models.IntegerField()
+    school_data_total_score = models.FloatField()
+    school_danger_danger_degree = models.CharField(max_length=10)
 
     class Meta:
         managed = True
