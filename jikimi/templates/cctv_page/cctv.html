@@ -17,8 +17,6 @@
 </head>
 <body>
 
-  {% if request.user.is_authenticated %}
-  
 	<div class="wrapper">
 		<!--top menu & menu button-->
 		<div class="sidebar">
@@ -72,18 +70,7 @@
 
 		
 	<script src="{% static 'cctv_page/script.js' %}"></script>
-
-	{% else %}
-	<script>
-	
-	if(confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?"))
-		window.location.href = "{% url 'account:login' %}";
-	else
-		window.location.href = "{% url 'index'%}";
-	
-	</script>
-	
-	{% endif %} 
+ 
 
 </body>
 </html>

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'my_page/style.css' %}">
 </head>
 <body>
 
@@ -44,7 +46,7 @@
 	<div class="my_page_info row">
 	
 		
-			<img class = "col-4" src = "annonymous_user.png"/>
+			<img class = "col-4" src = "{% static 'my_page/annonymous_user.png'  %}"/>
 		
 			<div class= "col-8">
 				
@@ -55,12 +57,12 @@
 					<div class = "div_acc_grid row">
 								
 						<div class = "div_acc_info white col-5">
-							<input type="text" placeholder="이름" class="div_acc_str"/>
+							<input type="text" placeholder="이메일" class="div_acc_str" value="{{request.user.email}}" disabled/>
 							<input type="button" value="수정" class="div_acc_info div_acc_modify"/>
 						</div>
 						
 						<div class = "div_acc_info white col-5" >
-							<input type="text" placeholder="핸드폰 번호" class="div_acc_str"/>
+							<input type="text" placeholder="핸드폰 번호" class="div_acc_str" value="{{request.user.user_phone}}" disabled/>
 							<input type="button" value="수정" class="div_acc_info div_acc_modify"/>
 						</div>
 		
@@ -70,12 +72,12 @@
 					<div class = "div_acc_grid row">
 								
 						<div class = "div_acc_info white col-5">
-							<input type="text" placeholder="이메일" class="div_acc_str"/>
+							<input type="text" placeholder="학교" class="div_acc_str" disabled/>
 							<input type="button" value="수정" class="div_acc_info div_acc_modify"/>
 						</div>
 						
 						<div class = "div_acc_info white col-5">
-							<input type="password" placeholder="비밀번호" class="div_acc_str"/>
+							<input type="password" placeholder="비밀번호" class="div_acc_str" value="{{request.user.password}}" disabled/>
 							<input type="button" value="수정" class="div_acc_info div_acc_modify"/>
 						</div>
 		

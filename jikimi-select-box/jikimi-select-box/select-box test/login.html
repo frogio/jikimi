@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Completion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- === Login Form START ===   -->
+ <section class="form-body"> 
+  <div class="container">
+  <div class="login-wrap active">
+    <div class="title">
+        <h1>Login</h1>
+    </div>
+
+    <form action="#">
+        <div class="input-area">
+            <input type="email" id="email" autocomplete="off" required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="input-area">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+        </div>
+
+        <div class="forgot-pass">
+            <a href="#">Forgot password?</a>
+        </div>
+
+        <div class="button-area">
+            <button type="submit" class="login-btn">Login</button>
+        </div>
+    </form>
+
+    <div class="form-toggle-area">
+        <p>Not a member? <span id="toggle-signup">Signup now</span></p>
+    </div>
+  </div>
+
+        <!-- signup form -->
+        <div class="signup-wrap">
+          <div class="title">
+              <h1>Signup</h1>
+          </div>
+
+          <form action="#">
+              <div class="input-area">
+                  <input type="text" id="name" autocomplete="off" required>
+                  <label for="name">Name</label>
+              </div>
+
+              <div class="input-area">
+                  <input type="email" id="email" autocomplete="off" required>
+                  <label for="email">Email</label>
+              </div>
+
+              <div class="input-area">
+                  <input type="password" id="password" required>
+                  <label for="password">Password</label>
+              </div>
+
+              <div class="wrapper">
+                <div class="select-btn">
+                  <span>Select School</span>
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+                <div class="content">
+                  <div class="search">
+                    <!-- <input type="text" placeholder="Search by school name"> -->
+                  </div>
+                  <ul class="options">
+                    <li>school name01</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="button-area">
+                  <button type="submit" class="signup-btn">Signup</button>
+              </div>
+          </form>
+
+          <div class="form-toggle-area">
+              <p>Have an account? <span id="toggle-login">Login now</span></p>
+          </div>
+        </div>
+     </div>
+</section>
+
+
+<!-- ionicons link -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!--=== Main JS Link START ===-->
+<script src="script.js"></script>
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>

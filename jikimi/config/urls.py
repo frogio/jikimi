@@ -22,4 +22,5 @@ urlpatterns = [
 	path("",index, name = "index"),
 	path("cctv_page/", include('cctv_page.urls')),
     path("account/",include('account.urls')),
+    path("violence_data_page/", include('violence_data_page.urls')),
 ]

@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import User
+from django.contrib.auth.decorators import login_required
 
 
 INVALID_PASSWORD = 0   #password 불일치
@@ -24,7 +25,7 @@ def signup(request):
                                             username = request.POST['email'],
                                             email=request.POST['email'],
                                             user_phone = request.POST['phone_no'],
-                                            # user_school=None,
+                                            # user_school=None,             # 셀렉트 박스...
                                             password=request.POST['password1']
                                             )
     
@@ -49,3 +50,7 @@ def isValidateUser(request):
         return INVALID_EMAIL
     
     return VALID_ACCOUNT
+
+@login_required(login_url='account:login')
+def my_page(request):
+    return render(request, 'my_page/my_page.html')

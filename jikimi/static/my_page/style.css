@@ -1,0 +1,124 @@
+
+body {
+  background: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  color: #0d1b2a;
+}
+
+#mainNavbar {
+  font-size: 1.5rem;
+  font-weight: 100;    
+}
+
+#mainNavbar .nav-link {
+  color: #000000;
+}
+
+#mainNavbar .nav-link:hover {
+  color: #e5e5e5;
+}
+
+#mainNavbar .navbar-brand {
+  color: #000000;
+  font-size: 1.5rem;
+}
+
+.navbar.scrolled {
+  background: rgb(128,128,128);
+  transition: background 500ms;
+}
+
+
+.cctv_wrapper{
+	margin-top:7rem;
+	padding:2rem;
+}
+
+
+.my_page_wrapper{
+  background: #dee1e0;
+  border-radius: 50px;
+  padding-top:20%;
+  padding-bottom:20%;
+  padding-left : 5%;
+  padding-right : 5%;
+
+  margin: 5%;
+}
+
+img{
+	
+	position: relative;
+    width: 23rem;
+    height: 23rem;
+	
+}
+
+.my_page_info{
+
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  
+}
+
+
+.div_mmg_acc{
+  border-radius: 50px;
+  margin-left : 5%;
+  margin-bottom : 5%;
+  text-align  : center;
+  background : #000000;
+  font-size : 1.7rem;
+  width : 100%;
+}
+
+
+.black{
+	color:#ffffff;
+}
+
+.div_acc_grid{
+
+  display:flex;
+  justify-content:space-between;
+  width : 100%;
+  margin-left : 5%;
+}
+
+.div_acc_info{
+  border-radius: 50px;
+  padding : 2%;
+  background: #ffffff;
+  margin-bottom : 5%;
+  font-size : 1rem;
+
+}
+
+.div_acc_modify{
+  margin-bottom : 0 !important;	
+}
+
+.div_acc_str{
+  border:0px;
+}
+
+
+.white{
+	color:#000000;
+}
+
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background: #dee1e0;
+  border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb{
+  background: #9eafae;
+  border-radius: 10px;
+}

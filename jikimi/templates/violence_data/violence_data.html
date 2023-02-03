@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCTV</title>
+  <link rel="stylesheet" href="{% static 'cctv_page/style.css' %}">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body>
+
+    
+    <!-- school_data_harzard / school_alleviate /  school_total_score / school_data_degree -->
+    <!-- # region_name / region_environment_score / school_data_harzard / school_alleviate /  school_total_score / school_data_degree -->
+
+    {{ schoolInfo.school_data_school.school_name }}</br>    <!--학교 이름-->
+
+    {{ schoolInfo.school_data_school.school_address1.region_name }}</br>              <!-- 시, 군, 구 -->
+    {{ schoolInfo.school_data_school.school_address1.region_environment_score }}</br> <!-- 환경 지표 -->
+    {{ schoolInfo.school_data_harzard_score }}</br>         <!-- 위해 지표 -->
+    {{ schoolInfo.school_data_alleviate_score }}</br>       <!-- 경감 지표 -->
+    {{ schoolInfo.school_data_total_score }}</br>           <!-- 고등학교 점수 -->
+    {{ schoolInfo.school_danger_danger_degree }}</br>       <!-- 종합 위험도 -->
+    
+</body>
+</html>
