@@ -58,13 +58,12 @@ def isValidateUser(request):
     if(request.POST["password1"] != request.POST["password2"]):
         return INVALID_PASSWORD
     
-    elif(request.POST["school_name"] == 0):
+    elif(request.POST["school_name"] == "0"):
         return NO_SELECT_SCHOOL
 
     elif(User.objects.filter(email = request.POST['email']).exists()):
         return INVALID_EMAIL
     
-
     return VALID_ACCOUNT
 
 @login_required(login_url='account:login')
