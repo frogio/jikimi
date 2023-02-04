@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup page</title>
+  <link rel="stylesheet" href="{% static 'acc_page/style.css' %}">
+  <script src="https://kit.fontawesome.com/e35b13c1a6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <button class="home"><i class="fa-solid fa-house"></i></button>
+    <h1>Signup</h1>
+
+    <form method="POST" class="post-form">       
+      
+      {% csrf_token %}
+      <input type="email" class="input_text" placeholder="이메일" name="email">          
+      <input type="text" class="input_text" placeholder="학교명" name="school">
+      <!-- <select name = "school" class="select">
+        <option value = "@@고등학교">@@고등학교</option>
+        <option value = "@@고등학교">@@고등학교</option>
+
+      </select>
+       -->
+      <input type="text" class="input_text" placeholder="전화번호" name="phone_no">
+      <input type="password" class="input_text" placeholder="비밀번호" name="password1">
+      <input type="password" class="input_text" placeholder="비밀번호 확인" name="password2">
+      
+      <button type="submit">Signup</button>      
+    
+    </form>
+
+    <div class="member">
+      Already have an account? <a href="{% url 'account:login' %}">
+        Login
+      </a>
+    </div>
+  </div>
+</body>
+</html>
