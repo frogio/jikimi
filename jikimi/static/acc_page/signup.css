@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url(/img02.jpg) no-repeat;
+  background: url('main-bg.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -22,7 +22,7 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/img02.jpg');
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('main-bg.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -109,7 +109,7 @@ form {
   margin-top: 25px;
   margin-left: 20px;
   margin-bottom: 15px;
-  color: #eee;
+  color: #000;
   font-size: 17px;
 }
 

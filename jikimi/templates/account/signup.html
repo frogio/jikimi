@@ -43,13 +43,12 @@
             <!-- <label for="phone">Phone_number</label> -->
           </div>
 
-          <select class="select-box">
-            <option class="select-title">Select school</option>
-            <option class="selected">school name 01</option>
-            <option class="selected">school name 02</option>
-            <option class="selected">school name 03</option>
-            <option class="selected">school name 04</option>
-            <option class="selected">school name 05</option>
+          <select class="select-box" name= "school_name" >
+            <option class="select-title" value = "0">Select school</option>
+            
+            {% for school in schoolInfo %}
+              <option class="selected" value = "{{ school.school_id }}" >{{ school.school_name }}</option>
+            {% endfor %}
           </select>
 
           <div class="button-area">

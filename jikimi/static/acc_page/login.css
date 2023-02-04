@@ -23,7 +23,7 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(img02.jpg);
+  background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('main-bg.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden;

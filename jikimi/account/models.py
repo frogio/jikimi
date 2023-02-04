@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from cctv_page.models import School 
+from violence_data_page.models import School 
 
 # Create your models here.
 
