@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('main-bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background:gray;
+}
+
+.logo {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.navigation .btnlogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+
+.navigation .btnlogin-popup:hover {
+  background: #fff;
+  color: #162938;
+}
+
+.form-body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('main-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 600px;
+  flex-basis: 390px;
+}
+
+.login-wrap,
+.signup-wrap {
+  padding: 2rem 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  height: auto;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  box-sizing: border-box;
+  transition: all 0.4s ease;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+}
+
+.title h1 {
+  padding-bottom: 1.2rem;
+  position: relative;
+  color: #fff;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.title h1::before {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0.8rem;
+  width: 7rem;
+  /* background: #55aadb; */
+  border-radius: 1rem;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+form {
+  margin-top: 3rem;
+}
+
+.input-area {
+  margin-top: 2.4rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.input-area input {
+  width: 90%;
+  height: 3rem;
+  color: #fff;
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  border-radius: 2rem;
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1rem);
+  padding: 0 1.4rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.input-area input:focus {
+  width: 100%;
+}
+
+.input-area label {
+  position: absolute;
+  top: 50%;
+  left: 2.6rem;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.input-area input:focus~label {
+  transform: translateY(-3rem);
+  left: 1rem;
+}
+
+.input-area input:valid~label {
+  transform: translateY(-3rem);
+}
+
+.forgot-pass {
+  margin-top: 0.4rem;
+  position: relative;
+}
+
+.forgot-pass a {
+  position: absolute;
+  top: 0;
+  left: 2.6rem;
+  color: #eff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.forgot-pass a:hover {
+  color: skyblue;
+}
+
+.button-area {
+  margin-top: 4rem;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+button {
+  width: 8rem;
+  height: 3rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  background: steelblue;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  width: 50%;
+  letter-spacing: 2px;
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.form-toggle-area {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.form-toggle-area p {
+  color: #eee;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.form-toggle-area p span {
+  color: #eff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.form-toggle-area p span:hover {
+  color: skyblue;
+}

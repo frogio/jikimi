@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+	
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 반응형 웹페이지를 만들 때 반드시 기입해야함! -->
+	
+		<link rel="stylesheet" type = "text/css" href = "{% static 'bootstrap.min.css' %}">
+		<link rel="stylesheet" type = "text/css" href = "{% static 'main_page.css' %}">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+	
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> 
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
+		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+		
+	</head>
+		 
+	<body>
+			{% include "nav_bar.html" %}
+			
+			{% block content %} {% endblock %}
+	</body>
+
+
+</html>

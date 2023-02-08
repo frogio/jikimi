@@ -12,7 +12,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='account:login')
 def violence_data_page(request):	
-    school_harzard = get_object_or_404(SchoolData, pk = 1)
+    school_harzard = get_object_or_404(SchoolData, pk = request.user.user_school.school_id)
+
+    school_harzard.school_data_alleviate_score += 100
 
     info = {
         "schoolInfo" : school_harzard 

@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edit signup</title>
+  <link rel="stylesheet" href="{% static 'acc_page/signup.css' %}">
+</head>
+<body>
+  <section class="form-body">
+    <div class="container">
+      <div class="signup-wrap acitve">
+        <div class="title">
+          <h1>SIGN UP</h1>
+        </div>
+
+        <form method="POST" class="post-form">       
+          {% csrf_token %}          
+
+<!--           
+          <input type="text" class="input_text" placeholder="학교명" name="school"> -->
+
+          <div class="input-area">
+            <input type="email" id="email" autocomplete="off" name="email" placeholder="Email">
+            <!-- <label for="email">Email</label> -->
+          </div>
+         
+          <div class="input-area">
+            <input type="password" id="password" autocomplete="off" name="password1" placeholder="Password">
+            <!-- <label for="password">Password</label> -->
+          </div>
+
+          <div class="input-area">
+            <input type="password" id="password_confirm" autocomplete="off" name="password2" placeholder="Password_confirm">
+            <!-- <label for="password_confirm">Password_confirm</label> -->
+          </div>
+
+          <div class="input-area">
+            <input type="text" id="phone" autocomplete="off" name="phone_no" placeholder="Phone Number">
+            <!-- <label for="phone">Phone_number</label> -->
+          </div>
+
+          <select class="select-box" name= "school_name" >
+            <option class="select-title" value = "0">Select school</option>
+            
+            {% for school in schoolInfo %}
+              <option class="selected" value = "{{ school.school_id }}" >{{ school.school_name }}</option>
+            {% endfor %}
+          </select>
+
+          <div class="button-area">
+            <button type="submit" class="signup-btn">SIGN UP</button>
+          </div>
+        </form>
+
+
+
+        <div class="form-link-area">
+          <p>Already have an account? <a href="{% url 'account:login' %}"><span> Login now</span></p><a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

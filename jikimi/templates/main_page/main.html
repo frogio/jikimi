@@ -1,4 +1,9 @@
+{% extends 'parent_page.html' %}
+
 {% load static %}
+
+{% block content %}
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -6,44 +11,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JIKIMI</title>
-  <link rel="stylesheet" href="{% static 'main_page/style.css'%}">
-</head>
-<body>    
-  <!-- <section class="form-body"> -->
+  <title>main_page</title>
+  <link rel="stylesheet" href="{% static '.style.css' %}">
+  </head>
+<body>
 
-  <!--=== Header START ===-->
-  <header>
-    <h2 class="logo">JIKIMI</h2>
-    <nav class="navigation">
-      <a href="#">HOME</a>
-      <a href="{% url 'cctv_page:cctv_page'%}">CCTV</a>
+  <section class="main-section">
+  <!--=== main start ===-->
+  <div class="main">
+    <p class="main-title">JIKIMI</p>
+    <p class="sub-title">JIKIMI is for preventing school violence.</p>
+  </div>
+</section>
 
-      <a href="{% url 'violence_data_page:violence_data_page'%}">DATA</a>
-
-      {% if request.user.is_authenticated %}
-        
-        <a href="{% url 'account:mypage' %}">MY PAGE</a>
-        <a href="{% url 'account:logout' %}">LOGOUT</a>
-      
-      {% else %}
-      
-        <a href="{% url 'account:login' %}">LOGIN</a>
-      
-      {% endif %}
-    </nav>
-  </header>
-
-  <!--=== MAIN START  ===-->
-
-      <p>메인 페이지 문구가 들어갈 자리 </p>
-   
-
-  <!--=== Main JS Link START ===-->
-<!-- </section> -->
-  <script src="{% static 'main_page/script.js' %}"></script>
-  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
-
-
 </html>
+
+{% endblock %}

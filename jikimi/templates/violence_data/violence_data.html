@@ -1,4 +1,9 @@
+{% extends 'parent_page.html'%}
+
 {% load static %}
+
+{% block content %}
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -6,28 +11,78 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CCTV</title>
-  <link rel="stylesheet" href="{% static 'cctv_page/style.css' %}">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <title>data_page</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS User Profile Card</title>
+	<link rel="stylesheet" href="{% static 'detail.css' %}">
 </head>
 <body>
 
-    
-    <!-- school_data_harzard / school_alleviate /  school_total_score / school_data_degree -->
-    <!-- # region_name / region_environment_score / school_data_harzard / school_alleviate /  school_total_score / school_data_degree -->
+<div class="data-wrapper">
 
-    {{ schoolInfo.school_data_school.school_name }}</br>    <!--학교 이름-->
+    <div class="data-right">
 
-    {{ schoolInfo.school_data_school.school_address1.region_name }}</br>              <!-- 시, 군, 구 -->
-    {{ schoolInfo.school_data_school.school_address1.region_environment_score }}</br> <!-- 환경 지표 -->
-    {{ schoolInfo.school_data_harzard_score }}</br>         <!-- 위해 지표 -->
-    {{ schoolInfo.school_data_alleviate_score }}</br>       <!-- 경감 지표 -->
-    {{ schoolInfo.school_data_total_score }}</br>           <!-- 고등학교 점수 -->
-    {{ schoolInfo.school_danger_danger_degree }}</br>       <!-- 종합 위험도 -->
-    
+        <div class="data-info">
+            <h3>{{ schoolInfo.school_data_school.school_name }}</h3>
+            <div class="info_data">
+              <div class="data">
+                <h4>시군구</h4>
+                <p>{{ schoolInfo.school_data_school.school_address1.region_name }}</p>
+              </div>
+              <div class="data">
+                <h4>환경지표</h4>
+                <p>{{ schoolInfo.school_data_school.school_address1.region_environment_score }}</p>
+              </div>
+              <div class="data">
+                <h4>위해지표</h4>
+                <p>{{ schoolInfo.school_data_harzard_score }}</p>
+              </div>
+              <div class="data">
+                <h4>경감지표</h4>
+                <p>{{ schoolInfo.school_data_alleviate_score }}</p>
+              </div>
+              <div class="data">
+                <h4>점수</h4>
+                <p>{{ schoolInfo.school_data_total_score }}</p>
+              </div>
+              <div class="data">
+                <h4>학교폭력위험도</h4>
+                <p>{{ schoolInfo.school_danger_danger_degree }}</p>
+              </div>
+            </div>
+        </div>
+      
+      <div class="data-exposition">
+            <h3>지표 정보</h3>
+            <div class="exposition">
+                 <div class="data">
+                    <h4>환경지표</h4>
+                    <p>학교폭력위험도에 부정적 영향을 미치는 서울특별시 자치구 환경을 반영하여 점수를 산정한 상대적 지표 </p>
+                    
+                 </div>
+                 <div class="data">
+                   <h4>위해지표</h4>
+                    <p>학교폭력위험도 가중에 영향을 미치는 서울특별시 고등학교별 위해 요소를  반영하여 점수를 산정한 상대적 지표 </p>
+                    
+              </div>
+              <div class="data">
+                <h4>경감지표</h4>
+                <p>학교폭력위험도 경감에 영향을 미치는 서울특별시 고등학교별 경감 요소를  반영하여 점수를 산정한 상대적 지표 </p>
+                
+             </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
+</body>
+</html>
+
+{% endblock %}

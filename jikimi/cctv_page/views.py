@@ -10,6 +10,5 @@ def cctv_page(request):
     list = {
         "videoList" : videoList 
     }
-
     return render(request, 'cctv_page/cctv.html', list)
 
