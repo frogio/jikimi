@@ -80,3 +80,5 @@ venv/
 .env
 
 .idea/
+
+team2_db
