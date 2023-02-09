@@ -12,15 +12,27 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+import environ
+import os
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# reading .env file
+environ.Env.read_env(
+    env_file=os.path.join(BASE_DIR, '.env')
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-rbpao_83g=q*z2sknujehrl@^qjaq6cj0%7s_a_69_gwsvy_3t"
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,10 +96,10 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "team2_db",
-        "USER" : "admin",   
+        "USER": "admin",
         "PASSWORD" : "password1234",
-        "HOST" : "team2-rds.cpa0spimmjj8.us-east-2.rds.amazonaws.com",
-        "PORT" : "3306"
+        "HOST": "team2-rds.cpa0spimmjj8.us-east-2.rds.amazonaws.com",
+        "PORT": "3306"
     }
 }
 
