@@ -15,44 +15,46 @@
 
 <div class="my-wrapper">
     <div class="my-left">
-        <img src="{% static 'my_page/annonymous_user.png'  %}" alt="user" width="100">
+      <!--  -->
+      <img src="/media/{{ request.user.profile_img }}" 
+      onerror="this.src='{% static 'my_page/annonymous_user.png' %}'" id="profile-img">
         <h4 class="my-h4">{{request.user.email}}</h4>
          <p class="my-p">{{request.user.user_school.school_name}}</p>
-    </div>
+         
+         <input type="file" id="profile-image" style="display:none;">  
+          </div>
 
     <!-- Inforamtion -->
-
-    <div class="my-right" id="showProfile">
-        <div class="my-info">
-            <h3 class="my-h3">Information</h3>
-            <div class="my-info-data">
-                 <div class="my-data">
-                    <h4 class="my-h4">Email</h4>
-                    <p class="my-p">{{request.user.email}}</p>
-                 </div>
-                 <div class="my-data">
-                   <h4 class="my-h4">Phone</h4>
-                    <p class="my-p">{{request.user.user_phone}}</p>
-              </div>
-            </div>
+   <div class="my-right" id="showProfile">
+    <div class="my-info">
+        <h3 class="my-h3">Information</h3>
+        <div class="my-info-data">
+             <div class="my-data">
+                <h4 class="my-h4">Email</h4>
+                <p class="my-p">{{request.user.email}}</p>
+             </div>
+             <div class="my-data">
+               <h4 class="my-h4">Phone</h4>
+                <p class="my-p">{{request.user.user_phone}}</p>
+          </div>
         </div>
-
-        <div class="my-content collapseable">
-            <div class="my-content-data">
-                 <div class="my-data">
-                    <p class="my-p">change password</p>
-              </div>
-            </div>
-        </div>
-      
-        <div class="my-button">
-          <ul>
-            <li id = "edit" class = "cursor_setting">Edit</li>
-          </ul>
-        </div>
-
     </div>
 
+    <div class="my-content collapseable">
+        <div class="my-content-data">
+             <div class="my-data">
+                <p class="my-p">change password</p>
+          </div>
+        </div>
+    </div>
+  
+    <div class="my-button">
+      <ul>
+        <li id = "edit" class = "cursor_setting">Edit</li>
+      </ul>
+    </div>
+
+    </div>
     <!-- End Info -->
 
 
@@ -72,7 +74,7 @@
                  </div>
                  <div class="my-data">
                    <h4 class="my-h4">Phone</h4>
-                   <input type="text" value = "{{request.user.user_phone}}" name = "phone"/>
+                   <input type="text" value = "{{request.user.user_phone}}" name = "phone_no"/>
               </div>
             </div>
         </div>
@@ -117,6 +119,72 @@
             $("#showProfile").css({"display":"block"});
             $("#editProfile").css({"display":"none"});
         });
+
+  $('#profile-img').on('click',function(e){
+    // alert("isWorking?");
+		$('#profile-image').click();
+	});
+
+	function readProfileImage(input) {
+		// 인풋 태그에 파일이 있는 경우
+		var fileForm = /(.*?)\.(jpg|jpeg|png|gif|bmp|pdf)$/;
+		var imgFile = $("#profile-image").val();
+		// 정규식
+	
+		if(input.files && input.files[0]) {
+		
+			if(!imgFile.match(fileForm)){
+				alert("이미지 파일만 업로드 가능합니다.");
+				location.reload();
+			}
+			// 이미지 파일인지 검사 (생략)
+			// FileReader 인스턴스 생성
+			const reader = new FileReader();
+			// 이미지가 로드가 된 경우
+			reader.onload = e => {
+				const previewImage = document.getElementById("profile-img");      // 마이페이지 프로필 사진 변경
+				previewImage.src = e.target.result;
+
+        const navImage = document.getElementById("pf_nav_img");           // navbar 프로필 사진 변경
+        navImage.src =  e.target.result;
+			
+			}
+			// reader가 이미지 읽도록 하기
+				reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+
+	$(document).ready(function(){	
+		const inputProfileImage = document.getElementById("profile-image");			// id_illust_url은 자동으로 생성된 input 태그의 id임
+
+		if(inputProfileImage != null){
+			inputProfileImage.addEventListener("change", e =>{ 
+
+
+            var data = new FormData();
+            data.append("image", $("#profile-image")[0].files[0])
+            data.append("csrfmiddlewaretoken", $("input[name=csrfmiddlewaretoken]").val())
+            $.ajax({
+                method: "POST",
+                url: "{% url 'account:profile_img' %}",
+                processData: false,
+                contentType: false,
+                encType: "multipart/form-data",
+                data: data,
+                success: function(data) {
+                    if (data.status == "Upload Done") {
+                      // $("#pf_nav_img").attr("src", "'{ { request.user.profile_img.url } }'");    // nav바의 프로필 사진 변경
+                      console.log("Uploading Done successfully")
+                    }
+                }
+            })
+
+
+				readProfileImage(e.target) });
+		}
+		
+	});
 
 </script>
 

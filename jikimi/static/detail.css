@@ -172,7 +172,7 @@ video {
 
 .data-wrapper .data-right{
   width: 100%;
-  background: #aaa;
+  background: #f76e6e;
   padding: 30px 25px;
   border-radius: 50px;
 }
@@ -224,6 +224,7 @@ video {
 .data-wrapper .data-right .info_data .data,
 .data-wrapper .data-right .exposition .data{
   width: 45%;
+  margin:1rem;
 }
 
 .data-wrapper .data-right .info_data .data h4,
@@ -297,7 +298,7 @@ video {
 
 .my-wrapper .my-right .my-info,
 .my-wrapper .my-right .my-content{
-  margin-bottom: 100px;
+  margin-bottom: 3rem;
 }
 
 .my-wrapper .my-right .my-info .my-h3,
@@ -369,4 +370,41 @@ video {
   border:0px;
   background-color:#fff;
   font-size:15px;
+}
+
+/* 프로필 이미지 */
+
+#profile-img{
+  width:15rem;
+  height:15rem;
+  border-radius: 50%;
+}
+
+#profile-img:hover{
+  cursor:Pointer;
+}
+
+.nav-profile-img {
+  position: relative;
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.nav-profile-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50, 50);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 50%;
+backface-visibility: hidden;
+}
+
+.point{
+  color:#fff!important;
+  font-size : 1.2rem!important;
+
 }
