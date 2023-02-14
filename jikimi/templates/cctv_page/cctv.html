@@ -46,10 +46,18 @@
         <p class="video-name">{{ request.user.user_school.school_name }} CCTV</p>
            
         </div>
+        {% if video_url %}
         <video autoplay controls>
-            <source src="" type="video/mp4">
+            <source src="{{ video_url }}" type="video/mp4">
                 zzz
         </video>
+        {% else %}
+        <video autoplay controls>
+            <source src="" type="video/mp4">
+                  zzz
+        </video>
+        {% endif %}
+
     </div>
   </div>
 

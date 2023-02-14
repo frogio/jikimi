@@ -26,6 +26,7 @@ body {
   height: 95%;
   display: flex;
   box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+  margin-top:3rem;
 }
 
 .cctv-left {
@@ -159,6 +160,7 @@ video {
     margin-top:10rem;
     background: #ffffff;
     padding:5%; 
+    margin-top:15rem;
     /* flex-direction:column; */
     /* flex-direction: column-reverse!important; */
   }
@@ -203,6 +205,7 @@ video {
   height: auto;
   display: flex;
   box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+
 }
 
 .data-wrapper .data-left{
@@ -233,8 +236,8 @@ video {
 
 .data-wrapper .data-right .data-info {
   font-size: 30px;
-  margin-top: 15px;
-  margin-bottom: 150px;
+  /* margin-top: 15px; */
+  /* margin-bottom: 150px; */
 }
 
 .data-right .info_data {
@@ -243,8 +246,8 @@ video {
 }
 
 .data-wrapper .data-right .data-exposition{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  /* margin-top: 50px; */
+  /* margin-bottom: 50px; */
   font-size: 28px;
 }
 
@@ -317,7 +320,7 @@ video {
 
 
   .data-wrapper .data-right {
-    margin-top: 30rem;
+    margin-top: 35rem;
   }
   
   .data-wrapper .data-right .data-info {
@@ -451,7 +454,7 @@ video {
     left: 50%;
     transform: translate(-50%,-50%);
     width: 100%;
-    margin-top:10rem;
+    margin-top:12rem;
     height: auto;
     display: block;
     box-shadow: 0 1px 20px 0 rgb(69 90 100 / 8%);

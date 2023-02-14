@@ -8,16 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
     <link rel="stylesheet" href="{% static 'detail.css' %}">
-    <link rel="stylesheet" href="{% static 'navbar_style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     
 
   </head>
   <body>
     <!--=== header start ===-->
+  <header>
+    <a href="{% url 'index' %}" class="logo">JIKIMI</a>
     <nav class="navbar">
-      <div class="navbar__logo">
-        <a href="{% url 'index' %}" class="logo">JIKIMI</a>
-      </div>
+      <a href="#" class="navbar__toggleBtn"> <i class="fas fa-bars"></i> </a>
+      
       <ul class="navbar__menu">
         <li><a href="{% url 'index' %}">HOME</a></li>
         <li><a href="{% url 'cctv_page:cctv_page' %}">CCTV</a></li>
@@ -29,9 +30,9 @@
         <li><a href="{% url 'account:logout' %}">LOGOUT</a></li>
         
         <li>
-          <div class="nav-profile-img">
+          <div class="nav-profile-img" style="margin-top: 0.7rem;">
             <img src="/media/{{ request.user.profile_img }}" 
-              onerror="this.src='{% static 'my_page/annonymous_user.png' %}'">
+              onerror="this.src='{% static 'my_page/annonymous_user.png' %}'" id="pf_nav_img">
           </div>
         </li>
 
@@ -41,20 +42,18 @@
         <li><a href="{% url 'account:signup' %}">SIGNUP</a></li>        
         
         {% endif %}
-     
+      
       </ul>
-      <a href="#" class="navbar__toggleBtn"> <i class="fas fa-bars"></i> </a>
-	</nav>
-	
-		<div class="content"></div>
-
+	  
+    </nav>
+  </header>
   </body>
   
   <script>
   
 	const toggleBtn = document.querySelector('.navbar__toggleBtn');
 	const menu = document.querySelector('.navbar__menu');
-
+	const sns = document.querySelector('.navbar__sns');
 
 	toggleBtn.addEventListener('click', () => {
         menu.classList.toggle('active');

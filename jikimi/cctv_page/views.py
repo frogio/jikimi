@@ -10,6 +10,13 @@ def cctv_page(request):
     list = {
         "videoList" : videoList 
     }
+
+    url = request.GET.get("video_url")
+
+    if(url != None):
+        list['video_url'] = url
+        print(list['video_url'])
+        
     
     return render(request, 'cctv_page/cctv.html', list)
 
