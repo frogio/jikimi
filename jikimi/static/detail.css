@@ -118,12 +118,11 @@ body {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-
+ 
 video {
-  /* override other styles to make responsive */
   width: 100%    !important;
   height: 85%   !important;
-}
+} 
 
 
 .video-name {
@@ -136,6 +135,61 @@ video {
   font-size: 40px;
 }
 
+/* ------------------------video 페이지 mediaQuery------------------------ */
+
+@media screen and (max-width: 768px) {
+
+  video {
+    /* override other styles to make responsive */
+    width: 100%    !important;
+    height: 30%   !important;
+  }
+
+  .cctv-wrapper {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display:block;
+    width: 85%;
+    height: 95%;
+    box-shadow: 0 1px 20px 0 rgb(69 90 100 / 8%);
+    border-radius: 50px;
+    display:table;
+    margin-top:10rem;
+    background: #ffffff;
+    padding:5%; 
+    /* flex-direction:column; */
+    /* flex-direction: column-reverse!important; */
+  }
+
+  
+
+
+  .cctv-left {
+    width:100%;
+    background: #f76e6e;
+    padding: 40px 25px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+      border-radius: 50px;
+    
+    display:table-footer-group;
+  }
+
+  .cctv-right{
+    width:100%;
+    border-radius: 10px;
+    border-radius: 50px;
+    
+    display:table-header-group;
+  }
+
+}
+
+
+/* ------------------------video 페이지 mediaQuery------------------------ */
 
 /* data page start */
 
@@ -248,6 +302,35 @@ video {
   font-weight: 200;
 }
 
+/* ------------------------Data 페이지 mediaQuery------------------------ */
+
+@media screen and (max-width: 768px) {
+  
+  .data-wrapper .data-right .info_data, .data-wrapper .data-right .exposition {
+    display: block;
+    justify-content: space-between;
+  }
+
+  .data{
+    width:100%!important;
+  }
+
+
+  .data-wrapper .data-right {
+    margin-top: 30rem;
+  }
+  
+  .data-wrapper .data-right .data-info {
+    margin-bottom: 0!important;
+  }
+
+
+}
+
+
+/* ------------------------Data 페이지 mediaQuery------------------------ */
+
+
 
 /* mypage start */
 
@@ -359,6 +442,41 @@ video {
   font-size: 20px;
 }
 
+/* ------------------------mypage 페이지 mediaQuery------------------------ */
+
+@media screen and (max-width: 768px) {
+  .my-wrapper {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    margin-top:10rem;
+    height: auto;
+    display: block;
+    box-shadow: 0 1px 20px 0 rgb(69 90 100 / 8%);
+}
+
+.my-wrapper .my-left {
+    width: 100%;
+    background: #f76e6e;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    color: #fff;
+}
+
+.my-wrapper .my-right {
+    width: 100%;
+    background: #fff;
+    padding: 90px 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+
+/* ------------------------mypage 페이지 mediaQuery------------------------ */
 
 
 .cursor_setting:hover{

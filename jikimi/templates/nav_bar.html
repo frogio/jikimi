@@ -17,7 +17,9 @@
   <header>
     <a href="{% url 'index' %}" class="logo">JIKIMI</a>
     <nav class="navbar">
-      <ul>
+      <a href="#" class="navbar__toggleBtn"> <i class="fas fa-bars"></i> </a>
+      
+      <ul class="navbar__menu">
         <li><a href="{% url 'index' %}">HOME</a></li>
         <li><a href="{% url 'cctv_page:cctv_page' %}">CCTV</a></li>
         <li><a href="{% url 'violence_data_page:violence_data_page' %}">DATA</a></li>
@@ -42,8 +44,22 @@
         {% endif %}
       
       </ul>
+	  
     </nav>
   </header>
   </body>
+  
+  <script>
+  
+	const toggleBtn = document.querySelector('.navbar__toggleBtn');
+	const menu = document.querySelector('.navbar__menu');
+	const sns = document.querySelector('.navbar__sns');
+
+	toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        // sns.classList.toggle('active');
+	});
+  </script>
+  
   
   </html>
