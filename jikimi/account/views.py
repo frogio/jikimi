@@ -69,6 +69,7 @@ def signup(request):
 
     else:                                               # 학교 정보 출력
         school_info = School.objects.values("school_id", "school_name")
+
         list = {
             "schoolInfo" : school_info
         }
