@@ -11,6 +11,17 @@
   - 클라우드 : 박예서(팀장), 유승지, 이기복
   - Iot : 김준무
 
+## Cloud(AWS)
+
+### Service Architecture
+![image](https://user-images.githubusercontent.com/12217092/221348484-94daeedc-4942-4293-b5fc-ed1355ebdd94.png)
+
+### SMS 서비스
+학교폭력 발생 시 서버에서 SMS를 보내 담당교사에게 알림
+
+![image](https://user-images.githubusercontent.com/12217092/220605051-a7ddd25d-8e55-4af8-94bb-6cb1ff0fb2b9.png)
+  
+
 ## Big Data
 
 ## **학교폭력위험 지표**
@@ -21,6 +32,104 @@ CPTED(셉테드) 범죄예방 디자인 연구센터에 따르면 학교 폭력�
 따라서 학교폭력의 사회 환경적 요인에 환경지표, 학교폭력의 학교 개별환경적 요인으로 위해지표, 경감지표로 분류하여
 서울특별시 고등학교 학교폭력위험지표를 개발하였다. 
 
+## 분석 도구 및 절차
+
+### 상관분석
+
+유의미한 요인을 파악하기 위해 상관분석을 진행하여 높은 수준의 상관관계가 있는 요인 선택
+
+### Standard Scaler
+
+Scale이 큰 feature의 영향이 비대해지는 것을 방지 
+
+### Kmeans(TSNE) 사용
+
+![image](https://user-images.githubusercontent.com/12217092/221348641-e9477dfd-3b12-41e2-9621-cadfdd9f7cb3.png)
+
+### Elbow method / Silhouette Score
+
+군집화에 있어 가장 최적인 k를 찾는 방법
+
+
+
+## 환경지표
+
+학교폭력위험도 가중에 영향을 미치는 서울특별시 자치구 환경을 반영하여 점수를 산정한 상대적 지표 
+분석 과정
+
+
+### 1. 판다스 내부 Corr 함수를 이용해 상관분석
+
+사회환경요인과 실제학교폭력신고수·피해응답학생 수 상관분석 진행 
+
+### 2. 상관분석 결과를 바탕으로 사회환경요인 중 유의미한 변수 결정
+
+![image](https://user-images.githubusercontent.com/12217092/221348955-e6a7f532-6b97-4b04-9c69-b352e96ee210.png)
+
+### 3. Standard Scaler 진행
+
+데이터 scale 조정
+
+### 4. Kmeans 군집화(TSNE 사용) 
+
+![image](https://user-images.githubusercontent.com/12217092/221348991-a521f057-538d-4d90-85d3-9365563fd64c.png)
+
+## 위해지표
+
+학교폭력위험도 가중에 영향을 미치는 학교 개별환경요인을 반영하여 점수를 산정한 상대적 지표
+
+### 1. 학교 개별환경요인
+
+학교500m내 유흥업소 개수, 학교폭력피해장소, 학교폭력피해유형, 학교폭력피해시간
+
+### 2. Standard Scaler 진행
+
+데이터 scale 조정
+
+### 3. Kmeans 군집화(TSNE 사용) 
+
+![image](https://user-images.githubusercontent.com/12217092/221349150-b64bbda0-ba6c-4459-984f-e97a4f7bbe0c.png)
+
+### 4. 위해지표 점수
+
+위해지표 학교폭력위험점수 계산 : 0~100점으로 5분위수 계산
+
+![image](https://user-images.githubusercontent.com/12217092/221349582-d2a8c137-ac84-41ff-af3e-e0c19b280084.png)
+
+
+
+## 경감지표
+
+학교폭력위험도 경감에 영향을 미치는 학교 개별환경요인을 반영하여 점수를 산정한 상대적 지표
+
+### 1. 학교 개별환경요인
+
+학교 500m내 cctv대수, 학교500m내 경찰관서수, 학교폭력예방교육시간
+
+### 2. Standard Scaler 진행
+
+데이터 scale 조정
+
+### 3. Kmeans 군집화(TSNE 사용) 
+
+![image](https://user-images.githubusercontent.com/12217092/221349265-bfa761e8-fcf9-437c-85bb-ec63b20f2c15.png)
+
+### 4. 경감지표 점수
+
+경감지표 학교폭력위험점수 계산 : 0~100점으로 4분위수 계산
+
+![image](https://user-images.githubusercontent.com/12217092/221349612-5a6e6785-067b-411e-b38a-95060cca3724.png)
+
+## 학교 폭력 위험 지표
+
+학교폭력에 영향을 미치는 사회환경요인과 학교개별환경요인을 모두 반영한 종합지표
+
+### 학교폭력 위험점수
+
+학교폭력위험점수란, 환경지표 · 위해지표 · 경감지표에서 학교폭력위험에 영향을 미치는 상관계수 크기를 가중치로 부여해서 계산한 학교폭력종합점수이다.
+점수는 0 ~ 100의 범위를 가지며, 점수와 위험도는 비례한다.
+
+![image](https://user-images.githubusercontent.com/12217092/221349842-43da39bf-76f6-4eac-b9fa-0a36d461b7ca.png)
 
 ## **데이터 명세**
 #### A. 서울열린데이터광장
@@ -59,6 +168,7 @@ CPTED(셉테드) 범죄예방 디자인 연구센터에 따르면 학교 폭력�
 
 
 
+
 ## IoT & Web Interface
 
 ### CCTV 구조
@@ -84,8 +194,3 @@ PC
 Mobile
 
 ![image](https://user-images.githubusercontent.com/12217092/220603352-a5e1b1ea-3f48-47d9-b09b-80c4f29c93b2.png)
-
-### SMS 서비스
-학교폭력 발생 시 서버에서 SMS를 보내 담당교사에게 알림
-
-![image](https://user-images.githubusercontent.com/12217092/220605051-a7ddd25d-8e55-4af8-94bb-6cb1ff0fb2b9.png)
