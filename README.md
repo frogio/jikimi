@@ -1,7 +1,4 @@
-# jikimi
-멀티캠퍼스 융복합 프로젝트
-
-Django 4.1.1 기반으로 작성됨
+# jikimi 멀티캠퍼스 융복합 프로젝트
 
 학교폭력 감시 및 위험 지표 분석 프로젝트
 
@@ -18,7 +15,9 @@ Django 4.1.1 기반으로 작성됨
 
 
 ### Web interfaces
- 
+
+Django 4.1.1 기반으로 작성됨 
+
 PC
 
 ![image](https://user-images.githubusercontent.com/12217092/220603318-f9574569-7878-4e0c-9785-1b80d711bdcd.png)
